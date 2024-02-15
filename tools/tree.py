@@ -31,7 +31,7 @@ def list_files(startpath, exclude_dirs, exclude_prefix):
     return structure
 
 # Modifica esto para incluir las carpetas que quieras excluir
-exclude_dirs = [".git", "__pycache__", ".vscode", "tools"]
+exclude_dirs = [".git", "__pycache__", ".vscode", "tools", "poppler-23.11.0", "archivos"]
 exclude_prefix = "venv"
 
 try:
