@@ -1,0 +1,321 @@
+./
+│   ├── .env
+│   ├── .gitignore
+│   ├── requirements.txt
+├── archivos/
+│   │   ├── anadir descripcion.txt
+│   │   ├── fases_estructuras
+│   │   ├── gpt copy.txt
+│   │   ├── gpt.txt
+│   │   ├── gpt_generacion.txt
+│   │   ├── ordenes_a_cerrar.txt
+│   │   ├── ordenes_cnc.txt
+│   │   ├── ordenes_cnc_part2.txt
+│   ├── data copy/
+│   │   │   ├── Copy of AVANCE BAST_SAP - Copy.xlsx
+│   │   │   ├── Copy of AVANCE BAST_SAP.xlsx
+│   ├── fabricacion real/
+│   │   │   ├── AVANCE BAST_SAP_real_paskual.xlsx
+│   ├── PLANTILLA/
+│   │   │   ├── EJEMPLO.csv
+│   │   │   ├── Lanzamientos SAP_Acabado - Copy.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado -sin borrar duplicados.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_completo-old.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_completo.xlsx
+│   ├── results/
+│   │   │   ├── Lanzamientos SAP_Acabado.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_1.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_2.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20231227_153416.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20231227_153734.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20231228_073611.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20231231_180733.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20231231_180903.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_091231.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_102432.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_104428.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_105353.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_105644.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_105901.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_105954.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_111607.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_111819.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_112640.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_113144.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_20240101_114808.xlsx
+│   │   │   ├── Lanzamientos SAP_Acabado_3.xlsx
+├── src/
+│   │   ├── __init__.py
+│   ├── services/
+│   │   │   ├── __init__.py
+│   │   │   ├── _analizar_datos_cierres.py
+│   │   │   ├── _analizar_datos_fabricacion_real.py
+│   │   │   ├── _importar_datos_cierres.py
+│   │   │   ├── analizar_datos_cierres.py
+│   │   │   ├── analizar_datos_fabricacion_real.py
+│   │   │   ├── importar_datos_cierres.py
+│   │   │   ├── importar_datos_fabricacion_real.py
+│   │   ├── comparativa_sap_estructuras/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── _asignar_fases_a_work_queue.py
+│   │   │   │   ├── _sacar_x_es_bast.py
+│   │   │   │   ├── _sacar_x_es_juanluvega.py
+│   │   │   │   ├── _utils.py
+│   │   │   │   ├── comparativa_sap_estructuras.py
+│   │   │   ├── gpt/
+│   │   │   │   │   ├── generacion_xes_bast.txt
+│   │   │   │   │   ├── generacion_xes_juanluvega.txt
+│   │   ├── generacion_lanzamiento/
+│   │   │   │   ├── _aux.py
+│   │   │   │   ├── _estilos.py
+│   │   │   │   ├── _generacion_lanzamiento.py
+│   │   │   │   ├── _modificar_excel.py
+│   │   │   │   ├── generacion_lanzamiento.py
+│   │   ├── generacion_lanzamiento_sap/
+│   │   │   │   ├── _aux.py
+│   │   │   │   ├── _estilos.py
+│   │   │   │   ├── _generacion_lanzamiento.py
+│   │   │   │   ├── _modificar_excel.py
+│   │   │   │   ├── generacion_lanzamiento_sap.py
+│   │   │   │   ├── preparacion_archivo_sap.py
+│   │   │   │   ├── preparacion_secciones_base_sora.py
+│   │   ├── zz_ordenes_a_cerrar/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── _utils.py
+│   │   │   │   ├── generar_archivo_ordenes_a_cerrar.py
+│   │   ├── zz_ordenes_cnc/
+│   │   │   │   ├── _detector_ordenes_sin_Cn.py
+│   │   │   │   ├── detector_ordenes_sin_Cn.py
+│   │   ├── _anadir_descripcion_aux/
+│   │   │   │   ├── _anadir_descripcion_aux.py
+├── tmp/
+│   │   ├── importacion_excel.pickle
+│   │   ├── importacion_excel.xlsx
+│   │   ├── resultados_filtrados.xlsx
+│   │   ├── visualizar.ipynb
+│   ├── comparativa_sap/
+│   │   ├── datos/
+│   │   │   │   ├── COLAB EXPORT_SAP_2024_01_08_Acabados.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_08.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_08_A.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_08_B.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_08_C - Copy.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_08_C.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_08_D.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_10.xlsx
+│   │   │   │   ├── EXPORT_SAP_2024_01_10_formato_baan_para_comparativa.xlsx
+│   │   │   │   ├── diccionario_proyectos_en_curso.xlsx
+│   │   │   │   ├── visualizar.ipynb
+│   │   │   ├── descarga_sap_modificada/
+│   │   │   │   │   ├── descarga_sap_modificada_20240110_111159.xlsx
+│   │   │   │   │   ├── descarga_sap_modificada_sora_20240110_111159 - Copy.xlsx
+│   │   │   │   │   ├── ejemplo.xlsx
+│   │   │   │   │   ├── ejemplo_sheet1_descarga_sap.csv
+│   │   │   │   │   ├── ejemplo_sin_duplicados_descarga_sap.csv
+│   │   │   │   ├── sora/
+│   │   │   │   │   │   ├── descarga_sap_modificada_sora_20240110_132610.xlsx
+│   │   ├── fabricacion_acabados/
+│   │   │   │   ├── Info Lupe.xlsx
+│   │   ├── fabricacion_estructuras/
+│   │   │   │   ├── Ordenes a lanzar estructuras.xlsx
+│   │   │   │   ├── Ordenes a lanzar estructuras_B.xlsx
+│   │   │   │   ├── bogies_juanlu.xlsx
+│   │   │   │   ├── bogies_juanlu_formato_vega.xlsx
+│   │   │   │   ├── bogies_vega.xlsx
+│   │   ├── output/
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_134600.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_135816.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_135915.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_135936.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_140151.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_140241.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_140308.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_141119.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240110_141826.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_20240125_115559.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_ACABADOS.xlsx
+│   │   │   │   ├── Comparativa_sap_vs_real_V2.xlsx
+│   │   ├── plantilla/
+│   │   │   │   ├── Modelo comparativa.xlsx
+│   ├── comparativa_sap_estructuras/
+│   │   │   ├── Activities (2024_01_30_11_36).csv
+│   │   │   ├── OMFs Estructuras por fases.csv
+│   │   │   ├── OMFs Estructuras por fases.xlsx
+│   │   ├── archivo_con_fases/
+│   │   │   │   ├── archivo_con_fases_20240130_131837.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_131848.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_132007.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_132031.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_132127.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_132324.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_135554.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_140245.xlsx
+│   │   │   │   ├── archivo_con_fases_20240130_140717.xlsx
+│   │   │   │   ├── archivo_con_fases_20240131_080431.xlsx
+│   │   │   │   ├── archivo_con_fases_20240131_080821.xlsx
+│   │   │   │   ├── archivo_con_fases_20240131_090748.xlsx
+│   │   ├── archivo_juanluvega/
+│   │   │   │   ├── bogies_juanlu_formato_vega.xlsx
+│   │   │   │   ├── bogies_vega.xlsx
+│   │   │   │   ├── ejemplo_merge_juanluvega.csv
+│   │   │   │   ├── merge_juanluvega.xlsx
+│   │   │   ├── output_formato_x/
+│   │   │   │   │   ├── juanluvega_formato_xes_20240131_095754.xlsx
+│   │   │   │   │   ├── juanluvega_formato_xes_20240131_101123.xlsx
+│   │   ├── bast/
+│   │   │   │   ├── BAST_FINAL_20240130_1108.xlsm
+│   │   │   │   ├── ConversiÃ³n Claves 1.xlsx
+│   │   │   │   ├── nombres_cols.py
+│   │   │   │   ├── pestanas_bast.xlsx
+│   ├── Fabricacion real estructuras/
+│   │   │   ├── ejemplo_fabricacion_real.csv
+│   │   │   ├── ejemplo_fabricacion_real.xlsx
+│   ├── fabricacion_real/
+│   │   │   ├── AVANCE BAST_SAP.xlsx
+│   │   │   ├── ejemplo.csv
+│   │   │   ├── ejemplo.xlsx
+│   │   │   ├── fabricacion_real.pickle
+│   │   │   ├── fabricacion_real.xlsx
+│   │   │   ├── fabricacion_real_20240101_122318.xlsx
+│   │   │   ├── fabricacion_real_20240101_122758.xlsx
+│   │   │   ├── fabricacion_real_20240101_124141.csv
+│   │   │   ├── fabricacion_real_20240101_124141.xlsx
+│   │   │   ├── fabricacion_real_20240110_085150.xlsx
+│   │   │   ├── fabricacion_real_20240110_144745.xlsx
+│   │   │   ├── fabricacion_real_20240117_105051.xlsx
+│   │   │   ├── fabricacion_real_20240125_115238.pickle
+│   │   │   ├── fabricacion_real_20240125_115238.xlsx
+│   │   │   ├── resumen_fabricacion_real.xlsx
+│   │   ├── results/
+│   │   │   │   ├── ejemplo.csv
+│   │   │   │   ├── resumen_fabricacion_real_20240103_114208.xlsx
+│   │   │   │   ├── resumen_fabricacion_real_20240103_115356.xlsx
+│   │   │   │   ├── resumen_fabricacion_real_20240110_095602.xlsx
+│   │   │   │   ├── resumen_fabricacion_real_20240110_144815.xlsx
+│   │   │   │   ├── resumen_fabricacion_real_20240117_105258.xlsx
+│   │   │   │   ├── resumen_fabricacion_real_20240125_115514.xlsx
+│   ├── formato_unitario/
+│   │   │   ├── importacion_excel.pickle
+│   │   │   ├── importacion_excel.xlsx
+│   │   │   ├── migracion - analisis - articulos.xlsx
+│   │   │   ├── migracion-completo.xlsx
+│   │   │   ├── migracion.pickle
+│   │   │   ├── migracion.xlsx
+│   │   │   ├── migracion_20240104121315.xlsx
+│   │   │   ├── migracion_20240104121524.xlsx
+│   │   │   ├── visualizar.ipynb
+│   │   ├── old/
+│   │   │   │   ├── migracion - 1.xlsx
+│   │   │   │   ├── migracion-2.xlsx
+│   ├── generacion_lanzamiento/
+│   │   ├── archivo_original/
+│   │   │   │   ├── Equivalencia proyectos Baan-SAP.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado bueno - Copy.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado bueno - descripciones.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado bueno.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado copy.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado sample copy.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado sample.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado.xlsx
+│   │   │   │   ├── Ordenes_a_lanzar_acabado_bueno_descripciones_20240104_122851 - REPLIC.xlsx
+│   │   │   │   ├── Ordenes_a_lanzar_acabado_bueno_descripciones_20240104_122851.xlsx
+│   │   │   │   ├── Ordenes_a_lanzar_acabado_bueno_descripciones_20240110.xlsx
+│   │   │   │   ├── ejemplo.csv
+│   │   │   │   ├── ejemplo_desc.csv
+│   │   ├── ejemplo/
+│   │   │   │   ├── ejemplo_baan.csv
+│   │   │   │   ├── ejemplo_completo.xlsx
+│   │   │   │   ├── ejemplo_fabricacion.csv
+│   │   ├── output/
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_150902.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_153850.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_173929.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_175709.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_175927.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_180230.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_180339.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_180619.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_181405.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_181513.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_182044.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_182338.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_182901.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_183040.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240103_183418.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_091421.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_091620.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_091756.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_092123.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_092747.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_093228.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_093307.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_093639.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_094945.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_105301.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_115637.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_123918.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_134638.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_140605.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_140956 - ok - Copy.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_140956 - ok.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_141224.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado 20240104_142259.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado COMPLETO - A.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado COMPLETO - Copy ref.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado COMPLETO - Copy.xlsx
+│   │   │   │   ├── Ordenes a lanzar acabado COMPLETO.xlsx
+│   ├── ordenes_a_cerrar/
+│   │   │   ├── seguimiento_escaneos.xlsx
+│   │   │   ├── seguimiento_escaneos_a_cerrar.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_143244.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_145645.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_160253.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_161552.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_162157.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_163511.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_163648.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_163801.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_163948.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_164108.xlsx
+│   │   │   ├── tareas_a_cerrar20240125_165220.xlsx
+│   │   │   ├── tareas_a_cerrar20240126_071759.xlsx
+│   │   │   ├── tareas_a_cerrar20240126_072049.xlsx
+│   │   │   ├── tareas_a_cerrar20240126_072336.xlsx
+│   │   │   ├── tareas_a_cerrar20240126_072618.xlsx
+│   │   │   ├── tareas_a_cerrar20240126_072935.xlsx
+│   │   │   ├── tareas_a_cerrar20240126_073043.xlsx
+│   │   │   ├── tareas_a_cerrar20240129_110852.xlsx
+│   ├── resultados_debug/
+│   │   │   ├── resultados_debug_20240101_105953.xlsx
+│   │   │   ├── resultados_debug_20240101_111606.xlsx
+│   │   │   ├── resultados_debug_20240101_111818.xlsx
+│   │   │   ├── resultados_debug_20240101_112521.xlsx
+│   │   │   ├── resultados_debug_20240101_112637.xlsx
+│   │   │   ├── resultados_debug_20240101_113143.xlsx
+│   │   │   ├── resultados_debug_20240101_114806.xlsx
+│   ├── zz_ordenes_a_liberar_cnc/
+│   │   ├── activities/
+│   │   │   │   ├── Activities (14).xlsx
+│   │   │   │   ├── ejemplo_activities.csv
+│   │   ├── avisos_calidad/
+│   │   │   │   ├── export (16).csv
+│   │   │   │   ├── export (16).xlsx
+│   │   │   │   ├── export (17).xlsx
+│   │   │   │   ├── export (19).xlsx
+│   │   ├── results/
+│   │   │   │   ├── Extraciclos Pendientes.xlsx
+│   │   │   │   ├── Extraciclos Pendientes20240126_092244.xlsx
+│   │   │   │   ├── Extraciclos Pendientes20240130_113908.xlsx
+│   │   │   │   ├── Extraciclos Pendientes20240130_114526.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240123_144829.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240123_144958.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240123_145159.csv
+│   │   │   │   ├── ordenes_a_liberar20240123_145159.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240123_150356.csv
+│   │   │   │   ├── ordenes_a_liberar20240123_150356.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240123_151937.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240123_160920.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240124_112453.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240124_114039.xlsx
+│   │   │   │   ├── ordenes_a_liberar20240124_115220.xlsx
