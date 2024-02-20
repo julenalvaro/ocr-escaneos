@@ -44,7 +44,6 @@ def procesar_archivos_no_estandar(dir_path, archivos_no_estandar, archivos):
                 archivos.remove(archivo)  # Elimina el antiguo de la lista
                 archivos.append(nuevo_nombre)  # Añade el nuevo
 
-
 if __name__ == "__main__":
     configuracion = obtener_configuracion()
     dir_pdfs = configuracion.DIR_PDFs
