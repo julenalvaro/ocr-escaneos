@@ -19,7 +19,7 @@ class DesarrolloConfig(Config):
 
 # Configuraciones para producción
 class ProduccionConfig(Config):
-    DIR_PDFs = os.getenv("DIR_PDFs_PROD", "\\")
+    DIR_PDFs = os.getenv("DIR_PDFs_PROD")
 
 # Función para obtener la configuración actual
 def obtener_configuracion():
