@@ -9,7 +9,8 @@ def extract_orden_operacion(pdf_path):
     # Convertir las páginas del PDF a imágenes
     pages = convert_from_path(pdf_path, dpi=300)
 
-    reader = easyocr.Reader(['es'])  # Asume español; ajusta según sea necesario
+    # Asume español e inglés; ajusta según sea necesario
+    reader = easyocr.Reader(['es', 'en'])
 
     texto_orden = ""
     texto_operacion = ""
@@ -21,16 +22,16 @@ def extract_orden_operacion(pdf_path):
 
         for text in results:
             # Busca las palabras clave y los números después de ellas
-            # Modificación aquí para capturar solo los dígitos
-            match_orden = re.search(r'Orden:\s*(\d{10})', text)
-            match_operacion = re.search(r'Operación:\s*(\d{4})', text)
+            # Modificación aquí para capturar solo los dígitos y para soportar inglés
+            match_orden = re.search(r'(Orden|Order):\s*(\d{10})', text)
+            match_operacion = re.search(r'(Operación|Operation):\s*(\d{4})', text)
 
             if match_orden:
                 # Devuelve solo el grupo de dígitos capturado
-                texto_orden = match_orden.group(1)
+                texto_orden = match_orden.group(2)
             if match_operacion:
                 # Devuelve solo el grupo de dígitos capturado
-                texto_operacion = match_operacion.group(1)
+                texto_operacion = match_operacion.group(2)
 
             # Si ambos textos son encontrados, no es necesario seguir buscando
             if texto_orden and texto_operacion:
@@ -48,4 +49,3 @@ if __name__ == "__main__":
     orden, operacion = extract_orden_operacion(pdf_path)
     print("Orden encontrada:", orden)
     print("Operación encontrada:", operacion)
-
