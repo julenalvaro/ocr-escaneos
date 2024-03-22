@@ -30,22 +30,30 @@ def procesar_archivos_no_estandar(archivos_no_estandar):
         texto_orden, texto_operacion = extract_orden_operacion(ruta_archivo)
         print(f"Leído Orden: {texto_orden} y Operación: {texto_operacion}")
         
-        if not (re.match(r'\d{10}', texto_orden) and re.match(r'\d{4}', texto_operacion)):
-            destino = os.path.join(dir_errores, archivo)
-            if os.path.exists(destino):
-                print(f"Eliminando archivo existente en Errores OCR: {archivo}")
-                os.remove(destino)
-            print(f"Moviendo {archivo} a Errores OCR")
-            shutil.move(ruta_archivo, destino)
-        else:
-            nuevo_nombre = f"{texto_orden}-{texto_operacion}.pdf"
-            nuevo_destino = os.path.join(dir_path, nuevo_nombre)
-            if os.path.exists(nuevo_destino):
-                print(f"Eliminando archivo duplicado: {archivo}")
-                os.remove(ruta_archivo)
+        try:
+            if not (re.match(r'\d{10}', texto_orden) and re.match(r'\d{4}', texto_operacion)):
+                destino = os.path.join(dir_errores, archivo)
+                if os.path.exists(destino):
+                    print(f"Eliminando archivo existente en Errores OCR: {archivo}")
+                    os.remove(destino)
+                print(f"Moviendo {archivo} a Errores OCR")
+                shutil.move(ruta_archivo, destino)
             else:
-                print(f"Cambiando nombre de {archivo} a {nuevo_nombre}")
-                os.rename(ruta_archivo, nuevo_destino)
+                nuevo_nombre = f"{texto_orden}-{texto_operacion}.pdf"
+                nuevo_destino = os.path.join(dir_path, nuevo_nombre)
+                if os.path.exists(nuevo_destino):
+                    print(f"Eliminando archivo duplicado: {archivo}")
+                    os.remove(ruta_archivo)
+                else:
+                    print(f"Cambiando nombre de {archivo} a {nuevo_nombre}")
+                    os.rename(ruta_archivo, nuevo_destino)
+        except PermissionError as e:
+            print(f"No se pudo acceder a {archivo} debido a un error de permisos: {e}")
+        except FileNotFoundError as e:
+            print(f"No se encontró {archivo} durante la operación: {e}")
+        except Exception as e:
+            print(f"Error al procesar {archivo}: {e}")
+
 
 if __name__ == "__main__":
     configuracion = obtener_configuracion()

@@ -207,3 +207,4 @@ venv_*/
 /data/
 /tmp/
 /poppler-23.11.0/
+*.xlsx
