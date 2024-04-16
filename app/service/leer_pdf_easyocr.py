@@ -1,4 +1,5 @@
-# app/service/leer_pdf_easyocr.py
+# PATH: app/service/leer_pdf_easyocr.py
+
 
 from pdf2image import convert_from_path
 import easyocr

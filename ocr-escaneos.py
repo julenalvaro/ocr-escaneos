@@ -1,3 +1,5 @@
+# PATH: ocr-escaneos.py
+
 import os
 import re
 import shutil

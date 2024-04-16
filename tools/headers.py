@@ -1,3 +1,5 @@
+# PATH: tools/headers.py
+
 # tools/headers.py
 
 import os
