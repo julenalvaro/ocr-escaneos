@@ -50,9 +50,20 @@ def procesar_archivos_no_estandar(archivos_no_estandar):
             os.makedirs(dir_errores)
 
         print(f"Leyendo {archivo}")
-        texto_orden, texto_operacion = extract_orden_operacion(ruta_archivo)
-        print(f"Leído Orden: {texto_orden} y Operación: {texto_operacion}")
-        
+        try:
+            texto_orden, texto_operacion = extract_orden_operacion(ruta_archivo)
+            print(f"Leído Orden: {texto_orden} y Operación: {texto_operacion}")
+        except Exception as e:
+            print(f"Error al extraer orden y operación de {archivo}: {e}")
+            # Mueve el archivo a 'Errores OCR'
+            destino = os.path.join(dir_errores, archivo)
+            if os.path.exists(destino):
+                print(f"Eliminando archivo existente en Errores OCR: {archivo}")
+                os.remove(destino)
+            print(f"Moviendo {archivo} a Errores OCR debido a un error de extracción")
+            shutil.move(ruta_archivo, destino)
+            continue  # Continúa con el siguiente archivo
+
         try:
             if not (re.match(r'\d{10}', texto_orden) and re.match(r'\d{4}', texto_operacion)):
                 destino = os.path.join(dir_errores, archivo)
@@ -83,3 +94,4 @@ if __name__ == "__main__":
     dir_pdfs = configuracion.DIR_PDFs
     archivos_no_estandar, _ = listar_archivos_no_estandar(dir_pdfs)
     procesar_archivos_no_estandar(archivos_no_estandar)
+
