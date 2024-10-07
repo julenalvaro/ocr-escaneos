@@ -2,6 +2,7 @@
 
 from dotenv import load_dotenv
 import os
+import logging
 
 # Carga las variables de entorno desde .env
 load_dotenv()
@@ -13,8 +14,8 @@ def solicitar_confirmacion(config_obj):
     # Imprime las variables relevantes
     for key in dir(config_obj):
         if not key.startswith("__") and not callable(getattr(config_obj, key)):
-            print(f"{key}: {getattr(config_obj, key)}")
-    
+            logging.info(f"{key}: {getattr(config_obj, key)}")
+
     # Solicita confirmación
     respuesta = input("¿Quieres continuar con estos ajustes? (s/n): ")
     if respuesta.lower() != 's':
@@ -28,22 +29,24 @@ class Config:
 class DesarrolloConfig(Config):
     def __init__(self):
         super().__init__()
+        usuario_actual = os.getlogin()
         self.DIR_PDFs = os.getenv("DIR_PDFs_DEV")
-        print("Configuración de Desarrollo cargada.")
+        logging.info("Configuración de Desarrollo cargada.")
+        logging.info(f"El script se está ejecutando como: {usuario_actual}")
         solicitar_confirmacion(self)
 
 class PruebasConfig(Config):
     def __init__(self):
         super().__init__()
         self.DIR_PDFs = os.getenv("DIR_PDFs_PRUEBAS")
-        print("Configuración de Pruebas cargada.")
+        logging.info("Configuración de Pruebas cargada.")
         solicitar_confirmacion(self)
 
 class ProduccionConfig(Config):
     def __init__(self):
         super().__init__()
         self.DIR_PDFs = os.getenv("DIR_PDFs_PROD")
-        print("Configuración de Producción cargada.")
+        logging.info("Configuración de Producción cargada.")
         # Aquí podrías decidir si quieres o no solicitar confirmación en producción
 
 # Función para obtener la configuración actual
@@ -58,10 +61,3 @@ def obtener_configuracion():
     else:
         raise ValueError("Entorno no configurado correctamente.")
     return config_obj
-
-# ejemplo de uso: 
-
-# configuracion_actual = obtener_configuracion()
-# print(f"DIR_PDFs: {configuracion_actual.DIR_PDFs}")
-
-
